@@ -1,0 +1,4 @@
+Patient: Sarah K., 41F
+Diagnosis: HER2 positive invasive ductal carcinoma, stage I, diagnosed January 2024
+History: Newly diagnosed patient, treatment planning in progress.
+Current visit notes: Patient is in good overall health with no significant comorbidities. No current medications. Treatment options discussed including lumpectomy surgery followed by trastuzumab targeted therapy over 12 months. Critical complication identified during pre-treatment workup: patient is currently 8 weeks pregnant. This significantly impacts treatment timeline and drug selection, as some treatments are contraindicated during pregnancy. Oncology team has initiated urgent collaboration with maternal-fetal medicine specialists to determine safe treatment windows protecting both maternal and fetal health. Patient reports feeling anxious but remains cooperative and engaged in shared decision making.

@@ -1,0 +1,4 @@
+Patient: Robert M., 67M
+Diagnosis: Stage II non-small cell lung cancer, diagnosed November 2023
+History: Long term patient under active surveillance and treatment for over a year.
+Current visit notes: Today's visit shows concerning rise in CEA tumor markers, increasing from 4.2 to 11.8 over the past two months. Currently on pembrolizumab immunotherapy. Patient reports new onset of persistent cough and occasional chest pain over the past two weeks. Concerning finding that patient has not been taking prescribed blood thinners regularly due to cost concerns. Referred for urgent CT scan to investigate marker rise. Family history of blood clots noted in chart, increasing risk profile. Discussed financial assistance programs for medication costs.

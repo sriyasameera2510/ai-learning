@@ -1,0 +1,4 @@
+Patient: Jane D., 54F
+Diagnosis: Stage III ovarian cancer, diagnosed March 2024
+History: Patient underwent debulking surgery in April 2024, followed by adjuvant chemotherapy.
+Current visit notes: Presented today for follow-up after second cycle of chemotherapy. Reports increased fatigue and mild nausea, manageable with current medication. CA-125 markers came back at 340, down from 520 at last visit, which is encouraging progress. Currently on carboplatin and paclitaxel administered every 3 weeks. Blood pressure slightly elevated at 145/90, will monitor. Next imaging scan scheduled in 6 weeks to assess treatment response. Patient expressed anxiety about upcoming scan results and was referred to oncology counseling services.

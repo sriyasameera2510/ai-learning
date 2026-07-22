@@ -1,0 +1,6 @@
+question,faithfulness,answer_relevancy,context_precision,context_recall
+What are Jane D's current CA-125 levels?,1.0,0.933,0.333,1.0
+What medications is Robert M currently on?,1.0,0.767,0.667,0.5
+Is Sarah K currently pregnant?,0.5,0.807,0.333,0.0
+Does any patient have diabetes?,0.0,0.656,0.0,1.0
+What is Robert M's CEA marker trend?,1.0,0.638,0.333,1.0

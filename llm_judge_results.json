@@ -1,0 +1,176 @@
+[
+  {
+    "test_case": {
+      "id": "eval_001",
+      "question": "What are Jane D's current CA-125 levels?",
+      "notes": "Basic retrieval and correct patient attribution"
+    },
+    "answer": "According to the patient records, specifically [patient_1.txt], Jane D's current CA-125 markers are at 340, which is down from 520 at her last visit.",
+    "judgment": {
+      "accuracy": {
+        "score": 5,
+        "reasoning": "The answer correctly states Jane D's current CA-125 level as 340, which is directly mentioned in the provided context."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is fully supported by the context, specifically [patient_1.txt], and does not introduce any unsupported claims."
+      },
+      "completeness": {
+        "score": 5,
+        "reasoning": "The answer fully addresses the question by providing the current CA-125 level and also mentions the trend from the last visit for additional context."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "There is no information in the answer that is not supported by the provided context, so no hallucination is detected."
+      },
+      "overall_score": 5,
+      "verdict": "PASS",
+      "feedback": "The response accurately and completely answers the question based on the provided context without introducing any unsupported information."
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_002",
+      "question": "What medications is Robert M currently on?",
+      "notes": "Medication retrieval without cross-patient contamination"
+    },
+    "answer": "According to the provided patient records, the medications taken by Robert M are not explicitly stated in [patient_2.txt]. However, it is mentioned that Robert M has not been taking his prescribed blood thinners regularly. The medications mentioned in [patient_1.txt] are carboplatin and paclitaxel, but this is for a different patient. Therefore, based on the provided records, the specific medications Robert M is currently on are not found, except that he has been prescribed blood thinners which he has not been taking regularly.",
+    "judgment": {
+      "accuracy": {
+        "score": 4,
+        "reasoning": "The system answer correctly identifies that the medications for Robert M are not explicitly stated in the provided context, but it could be improved by explicitly stating that the information about carboplatin and paclitaxel is for a different patient and thus not relevant to Robert M."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is well-supported by the context and does not introduce any unsupported claims."
+      },
+      "completeness": {
+        "score": 4,
+        "reasoning": "The answer fully addresses the question by stating that the specific medications Robert M is currently on are not found, except for the mention of prescribed blood thinners."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "There is no hallucination detected, as the answer only reports information present in the context or the lack thereof."
+      },
+      "overall_score": 4,
+      "verdict": "PASS",
+      "feedback": "The system answer is mostly accurate and well-grounded, but could be improved by more explicitly addressing the relevance of the medications mentioned in the context to Robert M's case."
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_003",
+      "question": "Is Sarah K currently pregnant?",
+      "notes": "Critical patient safety information retrieval"
+    },
+    "answer": "According to the patient records, it is implied that Sarah K. is pregnant, as the notes mention \"this significantly impacts treatment timeline and drug selection, as some treatments are contraindicated during pregnancy\" ([patient_3.txt]). However, it is not explicitly stated that she is pregnant. The text only mentions the consideration of pregnancy in the context of treatment planning.",
+    "judgment": {
+      "accuracy": {
+        "score": 4,
+        "reasoning": "The system answer correctly implies that Sarah K. might be pregnant based on the context, but it does not explicitly confirm the pregnancy."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is well-supported by the context, which mentions the consideration of pregnancy in treatment planning."
+      },
+      "completeness": {
+        "score": 4,
+        "reasoning": "The answer fully addresses the question by providing the implied information about Sarah K.'s potential pregnancy, but it does not provide a definitive answer."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "The system answer does not introduce any information that is not present in the context."
+      },
+      "overall_score": 4,
+      "verdict": "PASS",
+      "feedback": "The system answer is mostly accurate and well-supported, but could be improved by providing a more definitive answer if possible."
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_004",
+      "question": "What is Jane D's blood pressure reading?",
+      "notes": "Specific numeric retrieval"
+    },
+    "answer": "According to the patient records, specifically [patient_1.txt], Jane D's blood pressure reading is 145/90, which is slightly elevated.",
+    "judgment": {
+      "accuracy": {
+        "score": 5,
+        "reasoning": "The answer correctly identifies Jane D's blood pressure reading as 145/90, which is present in the provided context."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is directly supported by the context, specifically [patient_1.txt], and does not introduce any unsupported claims."
+      },
+      "completeness": {
+        "score": 5,
+        "reasoning": "The answer fully addresses the question by providing the specific blood pressure reading for Jane D."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "There is no information in the answer that is not supported by the provided context, so no hallucination is detected."
+      },
+      "overall_score": 5,
+      "verdict": "PASS",
+      "feedback": "The system provides an accurate and well-supported answer that fully addresses the question."
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_005",
+      "question": "Does any patient have diabetes?",
+      "notes": "Hallucination test \u2014 correct answer is no data exists"
+    },
+    "answer": "There is no mention of diabetes in any of the provided patient records (patient_1.txt, patient_2.txt, patient_3.txt).",
+    "judgment": {
+      "accuracy": {
+        "score": 5,
+        "reasoning": "The system answer correctly states that there is no mention of diabetes in the provided patient records."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is fully supported by the context, as none of the patient records mention diabetes."
+      },
+      "completeness": {
+        "score": 5,
+        "reasoning": "The answer fully addresses the question by stating that diabetes is not mentioned in any of the patient records."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "The system answer does not introduce any information not present in the context."
+      },
+      "overall_score": 5,
+      "verdict": "PASS",
+      "feedback": "The system provides a complete and accurate answer that is fully grounded in the provided context."
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_006",
+      "question": "What is Robert M's CEA marker trend?",
+      "notes": "Marker retrieval and correct type attribution"
+    },
+    "answer": "According to the patient records, specifically [patient_2.txt], Robert M's CEA tumor marker trend is an increase from 4.2 to 11.8 over the past two months, which is described as a \"concerning rise\".",
+    "judgment": {
+      "accuracy": {
+        "score": 5,
+        "reasoning": "The answer accurately reflects the information provided in the context about Robert M's CEA marker trend."
+      },
+      "groundedness": {
+        "score": 5,
+        "reasoning": "The answer is directly supported by the context and does not introduce any unsupported claims."
+      },
+      "completeness": {
+        "score": 5,
+        "reasoning": "The answer fully addresses the question by providing the specific trend of Robert M's CEA marker levels."
+      },
+      "hallucination": {
+        "detected": false,
+        "reasoning": "There is no information in the answer that is not supported by the provided context."
+      },
+      "overall_score": 5,
+      "verdict": "PASS",
+      "feedback": "The answer accurately and completely addresses the question with information directly supported by the context."
+    }
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "test_case": {
+      "id": "eval_001",
+      "question": "What are Jane D's current CA-125 levels?",
+      "expected_keywords": [
+        "340",
+        "520",
+        "patient_1"
+      ],
+      "forbidden_keywords": [
+        "11.8",
+        "4.2"
+      ],
+      "source_file": "patient_1.txt",
+      "notes": "Tests basic retrieval and correct patient attribution"
+    },
+    "response": "According to the patient records, specifically [patient_1.txt], Jane D's current CA-125 markers are at 340, which is down from 520 at her last visit.",
+    "eval_result": {
+      "passed": true,
+      "keyword_score": 1.0,
+      "hallucination_detected": false,
+      "keyword_results": {
+        "340": true,
+        "520": true,
+        "patient_1": true
+      },
+      "forbidden_results": {
+        "11.8": false,
+        "4.2": false
+      }
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_002",
+      "question": "What medications is Robert M currently on?",
+      "expected_keywords": [
+        "pembrolizumab",
+        "patient_2"
+      ],
+      "forbidden_keywords": [
+        "carboplatin",
+        "paclitaxel"
+      ],
+      "source_file": "patient_2.txt",
+      "notes": "Tests medication retrieval without cross-patient contamination"
+    },
+    "response": "According to the provided patient records, the medications taken by Robert M are not explicitly stated in [patient_2.txt]. However, it is mentioned that Robert M has not been taking his prescribed blood thinners regularly. The types of blood thinners are not specified. \n\nOn the other hand, [patient_1.txt] mentions carboplatin and paclitaxel, but this information pertains to a different patient. Therefore, based on the provided records, the specific medications Robert M is currently on (excluding the blood thinners) are not found.",
+    "eval_result": {
+      "passed": false,
+      "keyword_score": 0.5,
+      "hallucination_detected": true,
+      "keyword_results": {
+        "pembrolizumab": false,
+        "patient_2": true
+      },
+      "forbidden_results": {
+        "carboplatin": true,
+        "paclitaxel": true
+      }
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_003",
+      "question": "Is Sarah K currently pregnant?",
+      "expected_keywords": [
+        "pregnant",
+        "8 weeks",
+        "patient_3"
+      ],
+      "forbidden_keywords": [],
+      "source_file": "patient_3.txt",
+      "notes": "Tests retrieval of critical patient safety information"
+    },
+    "response": "According to the patient records, it is implied that Sarah K. is pregnant, as the notes mention \"this significantly impacts treatment timeline and drug selection, as some treatments are contraindicated during pregnancy\" ([patient_3.txt]). However, it is not explicitly stated that she is pregnant. The text only mentions the consideration of pregnancy in the context of treatment planning.",
+    "eval_result": {
+      "passed": false,
+      "keyword_score": 0.67,
+      "hallucination_detected": false,
+      "keyword_results": {
+        "pregnant": true,
+        "8 weeks": false,
+        "patient_3": true
+      },
+      "forbidden_results": {}
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_004",
+      "question": "What is Jane D's blood pressure reading?",
+      "expected_keywords": [
+        "145",
+        "90",
+        "patient_1"
+      ],
+      "forbidden_keywords": [
+        "Robert",
+        "Sarah"
+      ],
+      "source_file": "patient_1.txt",
+      "notes": "Tests specific numeric retrieval"
+    },
+    "response": "According to the patient records, specifically [patient_1.txt], Jane D's blood pressure reading is 145/90.",
+    "eval_result": {
+      "passed": true,
+      "keyword_score": 1.0,
+      "hallucination_detected": false,
+      "keyword_results": {
+        "145": true,
+        "90": true,
+        "patient_1": true
+      },
+      "forbidden_results": {
+        "Robert": false,
+        "Sarah": false
+      }
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_005",
+      "question": "Does any patient have diabetes?",
+      "expected_keywords": [
+        "no",
+        "not",
+        "don't",
+        "no mention",
+        "cannot find"
+      ],
+      "forbidden_keywords": [
+        "yes",
+        "diabetic",
+        "insulin"
+      ],
+      "source_file": null,
+      "notes": "Hallucination test \u2014 correct answer is that no data exists"
+    },
+    "response": "There is no mention of diabetes in any of the provided patient records (patient_1.txt, patient_2.txt, patient_3.txt).",
+    "eval_result": {
+      "passed": false,
+      "keyword_score": 0.4,
+      "hallucination_detected": false,
+      "keyword_results": {
+        "no": true,
+        "not": false,
+        "don't": false,
+        "no mention": true,
+        "cannot find": false
+      },
+      "forbidden_results": {
+        "yes": false,
+        "diabetic": false,
+        "insulin": false
+      }
+    }
+  },
+  {
+    "test_case": {
+      "id": "eval_006",
+      "question": "What is Robert M's CEA marker trend?",
+      "expected_keywords": [
+        "4.2",
+        "11.8",
+        "patient_2"
+      ],
+      "forbidden_keywords": [
+        "CA-125",
+        "340",
+        "520"
+      ],
+      "source_file": "patient_2.txt",
+      "notes": "Tests marker retrieval and correct marker type attribution"
+    },
+    "response": "According to the patient records, specifically [patient_2.txt], Robert M's CEA tumor marker trend is an increase from 4.2 to 11.8 over the past two months, which is described as a \"concerning rise\".",
+    "eval_result": {
+      "passed": true,
+      "keyword_score": 1.0,
+      "hallucination_detected": false,
+      "keyword_results": {
+        "4.2": true,
+        "11.8": true,
+        "patient_2": true
+      },
+      "forbidden_results": {
+        "CA-125": false,
+        "340": false,
+        "520": false
+      }
+    }
+  }
+]
